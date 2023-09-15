@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/zuzex_db
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: false
+  liquibase:
+    change-log: classpath:liquibase/change.yml
+access_token: n6AYp4ZpSeCTG7eTp4Xk35GgxbyMmFEEQmaf949cBsJXJRn6M49Eo7fHJaXT9hTdVvnmFt2VIFCqOxtzgNGGDQ==

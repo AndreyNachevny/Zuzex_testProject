@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-houses
+      author: Andrey Nachevny
+      changes:
+        - createTable:
+            tableName: houses
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: address
+                  type: varchar(100)
+              - column:
+                  name: id_owner
+                  type: int
+  - changeSet:
+      id: create-users
+      author: Andrey Nachevny
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: age
+                  type: int
+              - column:
+                  name: password
+                  type: varchar
+              - column:
+                  name: house_id
+                  type: int
+                  constraints:
+                    foreignKeyName: house_user_fk
+                    referencedTableName: houses
+                    referencedColumnNames: id
